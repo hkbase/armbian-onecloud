@@ -22,7 +22,7 @@ env:
 jobs:
   prepare:
     name: Prepare
-    runs-on: x-pc
+    runs-on: ubuntu-22.04
     outputs:
       env: ${{ steps.get.outputs.env }}
     steps:
