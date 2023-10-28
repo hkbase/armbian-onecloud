@@ -7,14 +7,14 @@ on:
       - readme
     paths:
       - .github/workflows/ci.yml
-
+#https://github.com/GTAIV-Complete-Edition-text/armbian_build_ENABLE_LOAD_EDID
 env:
   SCRIPT_REPO: ${{ github.repository }}
   SCRIPT_REF: ${{ github.ref_name }}
   UBOOT_REPO: hzyitc/u-boot-onecloud
   UBOOT_RELEASE: latest
   UBOOT_BURNIMG: eMMC.burn.img
-  ARMBIAN_REPO: armbian/build
+  ARMBIAN_REPO: GTAIV-Complete-Edition-text/armbian_build_ENABLE_LOAD_EDID
   ARMBIAN_REF: main
   PATCHES: 4077,5076
   PATCHES_DISABLED: 5082
