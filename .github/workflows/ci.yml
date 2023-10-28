@@ -22,7 +22,7 @@ env:
 jobs:
   prepare:
     name: Prepare
-    runs-on: [self-hosted, linux]
+    runs-on: ubuntu-22.04
     outputs:
       env: ${{ steps.get.outputs.env }}
     steps:
@@ -90,7 +90,7 @@ jobs:
   build-debs:
     name: Build ${{ matrix.BRANCH }}
     needs: prepare
-    runs-on: [self-hosted, linux]
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -144,7 +144,7 @@ jobs:
   build:
     name: Build ${{ matrix.RELEASE }}-${{ matrix.BRANCH }}-${{ matrix.TYPE == 'desktop' && matrix.DESKTOP_ENVIRONMENT || matrix.TYPE }}
     needs: [ prepare, build-debs ]
-    runs-on: [self-hosted, linux]
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -283,7 +283,7 @@ jobs:
 
   release:
     needs: [ prepare, build ]
-    runs-on: [self-hosted, linux]
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
 
