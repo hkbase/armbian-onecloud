@@ -320,6 +320,7 @@ jobs:
 
       - name: Release
         run: |
+          sudo apt install -y hub
           cat <<EOF | sed -E 's/^  //' >Release.md
             CI $(date -d "$TIME" +'%Y-%m-%d %H:%M:%S %Z(%:z)')
 
