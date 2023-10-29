@@ -29,6 +29,7 @@ jobs:
       - id: get
         name: Get repositories information
         run: |
+          sudo apt install hub
           TIME="$(curl https://api.github.com/repos/${SCRIPT_REPO}/actions/runs/${GITHUB_RUN_ID} | jq -r .created_at)"
 
           SCRIPT_SHA=$(curl https://api.github.com/repos/${SCRIPT_REPO}/commits/${SCRIPT_REF} | jq -r .sha)
